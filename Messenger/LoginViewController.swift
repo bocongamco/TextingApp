@@ -64,6 +64,8 @@ class LoginViewController: UIViewController {
     @IBAction func loginPressed(_ sender: Any) {
         if dataInputFor(type: isLogin ? "login" : "register"){
             print("test Login")
+            //if login true, login, else register
+            isLogin ? loginUser() : registerUser()
         }else{
             ProgressHUD.showFailed("All Fields are required")
         }
@@ -110,51 +112,72 @@ class LoginViewController: UIViewController {
             
         }
     }
-    func validateInput(userEmail: String, password: String, retypePassword: String, username: String){
+    private func loginUser(){
         
-        
-        
-        let expression = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}$"
-        
-        
-        guard !userEmail.isEmpty else{
-            displayMessage(title: "Error", message: "Please enter your Email")
-            return
-        }
-        
-        let predicate = NSPredicate(format: "SELF MATCHES %@", expression)
-        if !predicate.evaluate(with: userEmail) {
-            displayMessage(title: "Error", message: "Please enter a correct email")
-        }
-        
-        guard !password.isEmpty else{
-            displayMessage(title: "Error", message: "Please enter your password")
-            return
-        }
-        guard !retypePassword.isEmpty else{
-            displayMessage(title: "Error", message: "Please re-enter your password")
-            return
-        }
-        guard !username.isEmpty else{
-            displayMessage(title: "Error", message: "Please enter your User name")
-            return
-        }
-        
-        if password.count < 8 {
-            displayMessage(title: "Error", message: "Please ensure that password is greater than 8 character")
-            return
-        }
-        if password != retypePassword {
-            displayMessage(title: "Error", message: "The retype password does not match with the password field ")
-            return
-        }
         
     }
-    func displayMessage(title: String, message: String) {
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-            self.present(alertController, animated: true, completion: nil)
+    private func registerUser (){
+        if passwordTextField.text! == repeatPasswordTextField.text!{
+            FirebaseUserListener.shared.registerUserWith(email: emailTextField.text!, password: passwordTextField.text!) { error in
+                if error == nil{
+                    ProgressHUD.showSucceed("Verification email sent")
+                    self.resendOutlet.isHidden = false
+                }else{
+                    print(error?.localizedDescription)
+                }
+            }
+        }else{
+            ProgressHUD.showError("Please ensure password is matched")
+        }
     }
+    
+    
+//
+//    func validateInput(userEmail: String, password: String, retypePassword: String, username: String){
+//
+//
+//
+//        let expression = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}$"
+//
+//
+//        guard !userEmail.isEmpty else{
+//            displayMessage(title: "Error", message: "Please enter your Email")
+//            return
+//        }
+//
+//        let predicate = NSPredicate(format: "SELF MATCHES %@", expression)
+//        if !predicate.evaluate(with: userEmail) {
+//            displayMessage(title: "Error", message: "Please enter a correct email")
+//        }
+//
+//        guard !password.isEmpty else{
+//            displayMessage(title: "Error", message: "Please enter your password")
+//            return
+//        }
+//        guard !retypePassword.isEmpty else{
+//            displayMessage(title: "Error", message: "Please re-enter your password")
+//            return
+//        }
+//        guard !username.isEmpty else{
+//            displayMessage(title: "Error", message: "Please enter your User name")
+//            return
+//        }
+//
+//        if password.count < 8 {
+//            displayMessage(title: "Error", message: "Please ensure that password is greater than 8 character")
+//            return
+//        }
+//        if password != retypePassword {
+//            displayMessage(title: "Error", message: "The retype password does not match with the password field ")
+//            return
+//        }
+//
+//    }
+//    func displayMessage(title: String, message: String) {
+//            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+//            self.present(alertController, animated: true, completion: nil)
+//    }
 
 }
 

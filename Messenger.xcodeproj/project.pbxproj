@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		6A32EA338C58C2B6DE6C5A43 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7E69FCC654D404C4483B86 /* Pods_Messenger.framework */; };
+		D62262C62A08BE8B003670A9 /* FirebaseUserListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62262C52A08BE8B003670A9 /* FirebaseUserListener.swift */; };
 		D6B558ED2A07AC410044D9AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6B558EC2A07AC410044D9AA /* GoogleService-Info.plist */; };
 		D6C550942A07D024001DD07A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C550932A07D024001DD07A /* User.swift */; };
 		D6C550972A07D1E1001DD07A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C550962A07D1E1001DD07A /* Constant.swift */; };
+		D6C550992A08BCC1001DD07A /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C550982A08BCC1001DD07A /* FirebaseCollectionReference.swift */; };
 		D6E9A8D02A064D6500A963A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E9A8CF2A064D6500A963A7 /* AppDelegate.swift */; };
 		D6E9A8D22A064D6500A963A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E9A8D12A064D6500A963A7 /* SceneDelegate.swift */; };
 		D6E9A8D42A064D6500A963A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E9A8D32A064D6500A963A7 /* LoginViewController.swift */; };
@@ -22,9 +24,11 @@
 /* Begin PBXFileReference section */
 		4B4B6F1115CFF08BA8ED996E /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
 		BEDA19123E87B8C4A1FB6BA4 /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
+		D62262C52A08BE8B003670A9 /* FirebaseUserListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserListener.swift; sourceTree = "<group>"; };
 		D6B558EC2A07AC410044D9AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D6C550932A07D024001DD07A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D6C550962A07D1E1001DD07A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		D6C550982A08BCC1001DD07A /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
 		D6E9A8CC2A064D6500A963A7 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6E9A8CF2A064D6500A963A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6E9A8D12A064D6500A963A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,15 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		D6C5509A2A08BD2D001DD07A /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				D6C550982A08BCC1001DD07A /* FirebaseCollectionReference.swift */,
+				D62262C52A08BE8B003670A9 /* FirebaseUserListener.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		D6E9A8C32A064D6500A963A7 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +116,7 @@
 				D6E9A8DA2A064D6700A963A7 /* LaunchScreen.storyboard */,
 				D6E9A8DD2A064D6700A963A7 /* Info.plist */,
 				D6B558EC2A07AC410044D9AA /* GoogleService-Info.plist */,
+				D6C5509A2A08BD2D001DD07A /* Firebase */,
 				D6C550952A07D029001DD07A /* Database */,
 			);
 			path = Messenger;
@@ -224,10 +238,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C550992A08BCC1001DD07A /* FirebaseCollectionReference.swift in Sources */,
 				D6C550942A07D024001DD07A /* User.swift in Sources */,
 				D6E9A8D42A064D6500A963A7 /* LoginViewController.swift in Sources */,
 				D6C550972A07D1E1001DD07A /* Constant.swift in Sources */,
 				D6E9A8D02A064D6500A963A7 /* AppDelegate.swift in Sources */,
+				D62262C62A08BE8B003670A9 /* FirebaseUserListener.swift in Sources */,
 				D6E9A8D22A064D6500A963A7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

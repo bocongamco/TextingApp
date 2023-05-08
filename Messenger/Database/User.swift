@@ -4,7 +4,7 @@
 //
 //  Created by Phan Thi Quynh on 07/05/2023.
 //
-
+// get user to put it in database
 import Foundation
 import FirebaseCore
 import Firebase
@@ -40,5 +40,19 @@ struct User: Codable, Equatable{
     }
     static func == (lhs:User, rhs:User)->Bool{
         lhs.id == rhs.id
+    }
+}
+
+func saveUserLocally(_ user: User){
+    
+    let encoder = JSONEncoder()
+    
+    do{
+//        Can encode user cuz user object comfirm to Codeable protocol
+        let data = try encoder.encode(user)
+        UserDefaults.standard.set(data, forKey: KEYCURRENTUSER)
+    }catch{
+        print("Error saving user locally", error.localizedDescription)
+        
     }
 }
