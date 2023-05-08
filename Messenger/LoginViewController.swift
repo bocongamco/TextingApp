@@ -7,6 +7,8 @@
 
 import UIKit
 import ProgressHUD
+import Firebase
+import FirebaseFirestore
 class LoginViewController: UIViewController {
     
     //vars
@@ -113,7 +115,19 @@ class LoginViewController: UIViewController {
         }
     }
     private func loginUser(){
-        
+        FirebaseUserListener.shared.loginUserWithEmail(email: emailTextField.text!, password: passwordTextField.text!) { (error,isEmailVerified) in
+            
+            if error == nil{
+                if isEmailVerified{
+                    print("User has logged in", User.currentUser?.email)
+                }else{
+                    ProgressHUD.showFailed("Please verify your email.")
+                    self.resendOutlet.isHidden = false
+                }
+            }else{
+                ProgressHUD.showFailed(error!.localizedDescription)
+            }
+        }
         
     }
     private func registerUser (){
@@ -130,6 +144,13 @@ class LoginViewController: UIViewController {
             ProgressHUD.showError("Please ensure password is matched")
         }
     }
+    
+//    Download user from firebase
+//    Email is nil cuz not always have it
+    
+    
+    
+    
     
     
 //

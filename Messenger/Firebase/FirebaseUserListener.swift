@@ -16,7 +16,21 @@ class FirebaseUserListener{
     }
     
     //    Login
-    
+     func loginUserWithEmail(email: String, password: String, completion: @escaping(_ error: Error?, _ isEmailVerified: Bool)-> Void){
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (authDataResult,error) in
+            if error == nil && authDataResult!.user.isEmailVerified{
+                
+                FirebaseUserListener.shared.downloadUserFromFirebase(userID: authDataResult!.user.uid, email: email)
+                
+                completion(error, true)
+            }else{
+                print("Email is not verified")
+                completion(error, false)
+            }
+        }
+        
+    }
     //    Register
     func registerUserWith(email: String, password: String, completion: @escaping (_ error: Error?) -> Void){
         
@@ -52,5 +66,29 @@ class FirebaseUserListener{
             print("error trying to add user to Firebase: ", error.localizedDescription)
         }
         
+    }
+    func downloadUserFromFirebase(userID: String, email: String? = nil){
+        
+//      Access user
+        FirebaseReference(.User).document(userID).getDocument { querySnapshot, error in
+            guard let document = querySnapshot else{
+                print("User document empty")
+                return
+            }
+            let result = Result{
+                try? document.data(as: User.self)
+            }
+            switch result{
+            case .success(let userObj):
+                //Check if userobject is exist then save
+                if let user = userObj {
+                    saveUserLocally(user)
+                }else{
+                    print("Document doesnt exist")
+                }
+            case .failure(let error):
+                print("Error decoding user", error.localizedDescription)
+            }
+        }
     }
 }
