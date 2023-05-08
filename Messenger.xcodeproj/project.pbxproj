@@ -69,6 +69,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D62262C72A08E8C6003670A9 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				D6C550962A07D1E1001DD07A /* Constant.swift */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
 		D6C550952A07D029001DD07A /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,12 +118,12 @@
 				D6E9A8CF2A064D6500A963A7 /* AppDelegate.swift */,
 				D6E9A8D12A064D6500A963A7 /* SceneDelegate.swift */,
 				D6E9A8D32A064D6500A963A7 /* LoginViewController.swift */,
-				D6C550962A07D1E1001DD07A /* Constant.swift */,
 				D6E9A8D52A064D6500A963A7 /* Main.storyboard */,
 				D6E9A8D82A064D6700A963A7 /* Assets.xcassets */,
 				D6E9A8DA2A064D6700A963A7 /* LaunchScreen.storyboard */,
 				D6E9A8DD2A064D6700A963A7 /* Info.plist */,
 				D6B558EC2A07AC410044D9AA /* GoogleService-Info.plist */,
+				D62262C72A08E8C6003670A9 /* Help */,
 				D6C5509A2A08BD2D001DD07A /* Firebase */,
 				D6C550952A07D029001DD07A /* Database */,
 			);

@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
     @IBAction func forgotPasswordPressed(_ sender: Any) {
         if dataInputFor(type: "password"){
             //reset password
-            print("test forgot pass")
+           resetPassword()
         }else{
             ProgressHUD.showFailed("Email is required.")
         }
@@ -57,6 +57,7 @@ class LoginViewController: UIViewController {
     @IBAction func resendEmailPressed(_ sender: Any) {
         if dataInputFor(type: "password"){
             //resend email
+            resendVerEmail()
             print("test  resend email")
         }else{
             ProgressHUD.showFailed("Email is required.")
@@ -119,6 +120,7 @@ class LoginViewController: UIViewController {
             
             if error == nil{
                 if isEmailVerified{
+                    self.navigateToTab()
                     print("User has logged in", User.currentUser?.email)
                 }else{
                     ProgressHUD.showFailed("Please verify your email.")
@@ -144,10 +146,34 @@ class LoginViewController: UIViewController {
             ProgressHUD.showError("Please ensure password is matched")
         }
     }
+    private func resetPassword(){
+        FirebaseUserListener.shared.resetPassword(email: emailTextField.text!) { error in
+            if error == nil{
+                ProgressHUD.showSucceed("Reset password link has been sent to your email.")
+            }else{
+                ProgressHUD.showFailed(error!.localizedDescription)
+            }
+        }
+    }
+    private func resendVerEmail(){
+        FirebaseUserListener.shared.resendVerEmail(email: emailTextField.text!) { error in
+            if error == nil{
+                ProgressHUD.showSucceed("Verification email has been sent")
+            }else{
+                ProgressHUD.showFailed(error!.localizedDescription)
+            }
+        }
+    }
     
 //    Download user from firebase
 //    Email is nil cuz not always have it
-    
+    private func navigateToTab(){
+        
+        let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+        
+        mainView.modalPresentationStyle = .fullScreen
+        self.present(mainView, animated: true, completion: nil)
+    }
     
     
     

@@ -15,6 +15,21 @@ class FirebaseUserListener{
         
     }
     
+    
+    //Resend email
+    func resendVerEmail(email: String, completion: @escaping(_ error: Error?) -> Void){
+        Auth.auth().currentUser?.reload(completion: { error in
+            Auth.auth().currentUser?.sendEmailVerification(completion: { error in
+                completion(error)
+            })
+        })
+    }
+    func resetPassword(email: String, completion: @escaping(_ error: Error?) -> Void){
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            completion(error)
+        }
+    }
+    
     //    Login
      func loginUserWithEmail(email: String, password: String, completion: @escaping(_ error: Error?, _ isEmailVerified: Bool)-> Void){
         
