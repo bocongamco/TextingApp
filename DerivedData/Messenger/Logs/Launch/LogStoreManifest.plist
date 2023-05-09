@@ -186,6 +186,51 @@
 			<key>uniqueIdentifier</key>
 			<string>B5FE85D8-230C-4403-883D-CDF788F50E24</string>
 		</dict>
+		<key>B7F1E96D-88C9-4E75-BACC-19F5404CBD06</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>70EE3BEE-59E4-4E38-840B-A7DDCD692C68</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-Messenger-2023.05.09_18-54-43-+1000.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Messenger project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Messenger</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Messenger</string>
+			<key>timeStartedRecording</key>
+			<real>705315283.01764202</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run Messenger</string>
+			<key>uniqueIdentifier</key>
+			<string>B7F1E96D-88C9-4E75-BACC-19F5404CBD06</string>
+		</dict>
 		<key>BEF06A55-4872-461D-93AA-3A14E82F7F4F</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>

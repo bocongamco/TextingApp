@@ -273,6 +273,9 @@
                                                     <rect key="frame" x="10" y="4.5" width="363.5" height="35"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Chat"/>
+                                                    <connections>
+                                                        <action selector="chatPressed:" destination="J9I-QP-4dI" eventType="touchUpInside" id="VQe-we-AnT"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -293,6 +296,9 @@
                                                     <rect key="frame" x="10" y="4.5" width="363.5" height="35"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="About the apps"/>
+                                                    <connections>
+                                                        <action selector="aboutPressed:" destination="J9I-QP-4dI" eventType="touchUpInside" id="jzg-EW-m8w"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -340,6 +346,9 @@
                                                     <buttonConfiguration key="configuration" style="plain" title="Log Out">
                                                         <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="logOutPressed:" destination="J9I-QP-4dI" eventType="touchUpInside" id="83r-Qd-QgX"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -358,6 +367,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Personal" id="Rgh-wH-fhn"/>
+                    <connections>
+                        <outlet property="avatarImage" destination="ABQ-rP-1aX" id="Zye-yM-2Oh"/>
+                        <outlet property="statusLabel" destination="Tkk-tc-28g" id="U5Q-bK-6ST"/>
+                        <outlet property="usernameLabel" destination="ndY-4b-0ID" id="4qz-Xl-Ft8"/>
+                        <outlet property="versionLabel" destination="4ft-95-Yzd" id="jVH-CS-afL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfd-56-ltc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
