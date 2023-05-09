@@ -25,18 +25,38 @@ class SettingTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         
     }
+    
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        showInformation()
+        showUserInformation()
     }
     
     
     // MARK: - Helper function
-    private func showInformation(){
-        
+    private func showUserInformation(){
+        if let user = User.currentUser{
+            usernameLabel.text = user.username
+            statusLabel.text = user.status
+            versionLabel.text = "Current version is: \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "")"
+            if user.avatarLink != ""{
+//                Download and change avatar
+            }
+        }
     }
-    
+    // MARK: - Table View EDIT
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        // remove section number by set the color to the same with bg color
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor(named: "tableviewBackGroundColor")
+        return headerView
+    }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
     
     // MARK: - Action
 
