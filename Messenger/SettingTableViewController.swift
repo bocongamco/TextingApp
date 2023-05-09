@@ -45,6 +45,12 @@ class SettingTableViewController: UITableViewController {
         }
     }
     // MARK: - Table View EDIT
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 0 && indexPath.row == 0{
+            performSegue(withIdentifier: "toEditProfileSegue", sender: self)
+        }
+    }
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         // remove section number by set the color to the same with bg color
         let headerView = UIView()
