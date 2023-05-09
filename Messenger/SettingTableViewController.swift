@@ -41,6 +41,9 @@ class SettingTableViewController: UITableViewController {
             versionLabel.text = "Current version is: \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "")"
             if user.avatarLink != ""{
 //                Download and change avatar
+                FileStorageFirebase.downloadImage(imageUrl: user.avatarLink) { avatarimage in
+                    self.avatarImage.image = avatarimage
+                }
             }
         }
     }

@@ -67,7 +67,9 @@ class EditProfileTableViewController: UITableViewController {
            userNameTextField.text = user.username
            statusOutlet.text = user.status
            if user.avatarLink != ""{
-               
+               FileStorageFirebase.downloadImage(imageUrl: user.avatarLink) { avatarimage in
+                   self.imageOutlet.image = avatarimage
+               }
            }
        }
    }
@@ -93,6 +95,7 @@ class EditProfileTableViewController: UITableViewController {
                 FirebaseUserListener.shared.saveUserToFireStore(user)
             }
 //            Save image locally
+            FileStorageFirebase.saveFileLocally(fileData: image.jpegData(compressionQuality: 1.0)! as  NSData, filename: User.currentId)
         }
     }
     
@@ -125,6 +128,7 @@ extension EditProfileTableViewController : GalleryControllerDelegate{
     func galleryController(_ controller: Gallery.GalleryController, didSelectImages images: [Gallery.Image]) {
         if images.count > 0{
             //Can force unwrapped cuz we alwasy have a value
+            //Get first img and resolve it and called it async
             images.first!.resolve { avatarImg in
                 
                 // Upload to Firebase

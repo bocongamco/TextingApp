@@ -45,7 +45,69 @@ class FileStorageFirebase{
             ProgressHUD.showProgress(CGFloat(progress))
         }
     }
+    
+    class func downloadImage(imageUrl: String, completion: @escaping(_ image: UIImage?) -> Void){
+        //print(getFileName(fileurl: imageUrl))
+        let imgFileName = getFileName(fileurl: imageUrl)
+        
+        if fileExistsAtPath(path: imgFileName){
+            print("Locally exist")
+            
+            if let filesContent = UIImage(contentsOfFile: fileInDocsDirectory(fileName: imgFileName)){
+                completion(filesContent)
+            }else{
+                print("Couldnt convert to local image")
+                completion(UIImage(named: "avatar"))
+            }
+        }else{
+            //
+            print("Download from database")
+            if imageUrl != ""{
+                let documentUrl = URL(string: imageUrl)
+                let downloadQ = DispatchQueue(label: "imageDownloadQ")
+                downloadQ.async {
+                    let data = NSData(contentsOf: documentUrl!)
+                    if data != nil{
+                        FileStorageFirebase.saveFileLocally(fileData: data!, filename: imgFileName)
+                        //Go back main thread
+                        DispatchQueue.main.async {
+                            completion(UIImage(data: data! as Data))
+                        }
+                        
+                    }else{
+                        print("No document in database")
+                        DispatchQueue.main.async {
+                            completion(nil)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    class func saveFileLocally(fileData: NSData, filename: String){
+        
+        let url = getDocumentsUrl().appendingPathComponent(filename,isDirectory: false)
+        //atomically: Overried, successfully->delete the old file
+        fileData.write(to: url,atomically: true)
+        
+    }
 }
-
+//get path for local file and pass it document directory
+func fileInDocsDirectory(fileName: String) -> String{
+    return getDocumentsUrl().appendingPathComponent(fileName).path
+    
+}
 //Helpers function
+func getDocumentsUrl() -> URL{
+    //return a array of url, so only want the last one in list, which is newest one
+    return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+}
+func fileExistsAtPath(path: String) -> Bool{
+    
+    let filePat = fileInDocsDirectory(fileName: path)
+    let fileManager = FileManager.default
+    
 
+    return fileManager.fileExists(atPath: filePat)
+}
