@@ -70,6 +70,16 @@ class SettingTableViewController: UITableViewController {
     
     @IBAction func logOutPressed(_ sender: Any) {
         print("logOutPressed button Pressed")
+        FirebaseUserListener.shared.logOutCurrentUser { error in
+            if error == nil{
+                let loginViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController")
+                // Do it in background thread
+                DispatchQueue.main.async {
+                    loginViewController.modalPresentationStyle = .fullScreen
+                    self.present(loginViewController,animated: true, completion: nil)
+                }
+            }
+        }
     }
     
 }

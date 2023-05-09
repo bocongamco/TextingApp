@@ -46,6 +46,7 @@ class FirebaseUserListener{
         }
         
     }
+    
     //    Register
     func registerUserWith(email: String, password: String, completion: @escaping (_ error: Error?) -> Void){
         
@@ -70,6 +71,18 @@ class FirebaseUserListener{
                 }
                 
             }
+        }
+    }
+    // Log out
+    func logOutCurrentUser(completion: @escaping(_ error: Error?) -> Void){
+        do{
+            try Auth.auth().signOut()
+            userDefaults.removeObject(forKey: KEYCURRENTUSER)
+            userDefaults.synchronize()
+            completion(nil)
+        }
+        catch let error as NSError{
+            completion(error)
         }
     }
 //    Save user to Firebase
