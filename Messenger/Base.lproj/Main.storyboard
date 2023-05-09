@@ -216,6 +216,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="tableViewBGColor"/>
+                        <color key="sectionIndexBackgroundColor" name="tableviewBackGroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="Section-1" id="cHL-W9-MCJ">
                                 <cells>
@@ -382,11 +383,12 @@
         <!--Edit Profile-->
         <scene sceneID="3tm-J2-dZD">
             <objects>
-                <tableViewController id="2ud-E1-LR1" sceneMemberID="viewController">
+                <tableViewController id="2ud-E1-LR1" customClass="EditProfileTableViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="GQu-Dc-Xjl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" name="tableviewBackGroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="Section-1" id="pIN-IQ-0Y2">
                                 <cells>
@@ -487,6 +489,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Edit Profile" largeTitleDisplayMode="never" id="2KU-RR-b1d"/>
+                    <connections>
+                        <outlet property="imageOutlet" destination="P46-wM-Ofc" id="Tra-Ue-9C8"/>
+                        <outlet property="statusOutlet" destination="zFX-aS-Ntz" id="KeY-He-vWY"/>
+                        <outlet property="userNameTextField" destination="7bf-mD-ajI" id="Rz5-cl-eEZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Z3-cO-Y5e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -559,6 +566,9 @@
             <color red="0.55699998140335083" green="0.55699998140335083" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="tableViewBGColor">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tableviewBackGroundColor">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
