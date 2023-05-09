@@ -6,7 +6,9 @@
 //
 
 import UIKit
-
+import Gallery
+import FirebaseStorage
+import ProgressHUD
 class EditProfileTableViewController: UITableViewController {
     // MARK: - Outlet
         
@@ -16,7 +18,7 @@ class EditProfileTableViewController: UITableViewController {
         
     @IBOutlet weak var statusOutlet: UILabel!
         
-        
+    var gallery: GalleryController!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,14 @@ class EditProfileTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         showUserInfo()
     }
+    
+    
+    // MARK: - Action
+    
+    @IBAction func editPressed(_ sender: Any) {
+        showGallery()
+    }
+    
     
     // MARK: - Table View EDIT
     
@@ -51,7 +61,7 @@ class EditProfileTableViewController: UITableViewController {
         //Show satus
     }
     
-    // MARK: - Table view data source
+    // MARK: - Update user data
     private func showUserInfo(){
        if let user = User.currentUser{
            userNameTextField.text = user.username
@@ -61,6 +71,31 @@ class EditProfileTableViewController: UITableViewController {
            }
        }
    }
+    private func showGallery(){
+        self.gallery = GalleryController()
+        self.gallery.delegate = self
+        Config.tabsToShow = [.imageTab,.cameraTab]
+        Config.Camera.imageLimit = 1
+        Config.initialTab = .imageTab
+        
+        self.present(gallery,animated: true,completion: nil)
+    }
+    //UploadImg
+    private func uploadAvaImg(_ image: UIImage){
+        //Creaet avatars folder
+        let fileDirec = "Avatars/" + "_\(User.currentId)" + ".jpg"
+        FileStorageFirebase.uploadImage(image, directory: fileDirec) { avatarLink in
+            //Check if theres user
+            
+            if var user = User.currentUser{
+                user.avatarLink = avatarLink ?? ""
+                saveUserLocally(user)
+                FirebaseUserListener.shared.saveUserToFireStore(user)
+            }
+//            Save image locally
+        }
+    }
+    
     private func updateTextField(){
         userNameTextField.delegate = self
         
@@ -81,4 +116,41 @@ extension EditProfileTableViewController : UITextFieldDelegate{
         }
         return true
     }
+}
+//Upload to firebase
+//Getlink and assigned to user
+//Update it to user
+//Finally set the image avatar
+extension EditProfileTableViewController : GalleryControllerDelegate{
+    func galleryController(_ controller: Gallery.GalleryController, didSelectImages images: [Gallery.Image]) {
+        if images.count > 0{
+            //Can force unwrapped cuz we alwasy have a value
+            images.first!.resolve { avatarImg in
+                
+                // Upload to Firebase
+                if avatarImg != nil{
+                    self.uploadAvaImg(avatarImg!)
+                    self.imageOutlet.image = avatarImg
+                }else{
+                    ProgressHUD.showError("Couldnt Select the image!")
+                }
+                
+            }
+        }
+        controller.dismiss(animated: true,completion: nil)
+    }
+    
+    func galleryController(_ controller: Gallery.GalleryController, didSelectVideo video: Gallery.Video) {
+        controller.dismiss(animated: true,completion: nil)
+    }
+    
+    func galleryController(_ controller: Gallery.GalleryController, requestLightbox images: [Gallery.Image]) {
+        controller.dismiss(animated: true,completion: nil)
+    }
+    
+    func galleryControllerDidCancel(_ controller: Gallery.GalleryController) {
+        controller.dismiss(animated: true,completion: nil)
+    }
+    
+    
 }

@@ -21,5 +21,11 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like to access to your camera for some addition services</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like to access to your media library for some addition services</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like to access to your photo library for some addition services</string>
 </dict>
 </plist>
