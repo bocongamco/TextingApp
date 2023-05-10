@@ -68,7 +68,7 @@ class EditProfileTableViewController: UITableViewController {
            statusOutlet.text = user.status
            if user.avatarLink != ""{
                FileStorageFirebase.downloadImage(imageUrl: user.avatarLink) { avatarimage in
-                   self.imageOutlet.image = avatarimage
+                   self.imageOutlet.image = avatarimage?.circleImage
                }
            }
        }
@@ -134,7 +134,7 @@ extension EditProfileTableViewController : GalleryControllerDelegate{
                 // Upload to Firebase
                 if avatarImg != nil{
                     self.uploadAvaImg(avatarImg!)
-                    self.imageOutlet.image = avatarImg
+                    self.imageOutlet.image = avatarImg?.circleImage
                 }else{
                     ProgressHUD.showError("Couldnt Select the image!")
                 }

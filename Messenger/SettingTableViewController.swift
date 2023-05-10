@@ -42,7 +42,7 @@ class SettingTableViewController: UITableViewController {
             if user.avatarLink != ""{
 //                Download and change avatar
                 FileStorageFirebase.downloadImage(imageUrl: user.avatarLink) { avatarimage in
-                    self.avatarImage.image = avatarimage
+                    self.avatarImage.image = avatarimage?.circleImage
                 }
             }
         }
