@@ -10,3 +10,5 @@ import Foundation
 let userDefaults = UserDefaults.standard
 public let KEYCURRENTUSER = "currentUser"
 public let KEYFILEREFERENCE = "gs://messenger-eade5.appspot.com"
+public let KSTATUS = "status"
+public let KFIRSTRUN = "firstrun"

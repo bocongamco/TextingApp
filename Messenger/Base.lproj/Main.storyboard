@@ -490,11 +490,51 @@
                         <outlet property="imageOutlet" destination="P46-wM-Ofc" id="Tra-Ue-9C8"/>
                         <outlet property="statusOutlet" destination="X70-LQ-clR" id="hBC-jI-yep"/>
                         <outlet property="userNameTextField" destination="7bf-mD-ajI" id="Rz5-cl-eEZ"/>
+                        <segue destination="yp8-Ay-kmZ" kind="show" identifier="toStatusView" id="3WS-CJ-sxM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Z3-cO-Y5e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6079.7101449275369" y="1331.9196428571429"/>
+        </scene>
+        <!--Status-->
+        <scene sceneID="Dwr-bg-cXe">
+            <objects>
+                <tableViewController id="yp8-Ay-kmZ" customClass="StatusTableViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1BR-XA-RGt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" name="tableViewBGColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="fa3-t8-toy" rowHeight="64" style="IBUITableViewCellStyleDefault" id="6qX-zL-ABc">
+                                <rect key="frame" x="0.0" y="50" width="414" height="64"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6qX-zL-ABc" id="Jrc-g8-11A">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fa3-t8-toy">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yp8-Ay-kmZ" id="Xx0-Kl-V8L"/>
+                            <outlet property="delegate" destination="yp8-Ay-kmZ" id="W15-9S-GHj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Status" id="1El-Rl-pcm"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8l8-sM-16s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7086" y="1343"/>
         </scene>
         <!--Chat-->
         <scene sceneID="Agi-GZ-RvD">
