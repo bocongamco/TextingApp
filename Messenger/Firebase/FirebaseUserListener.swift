@@ -119,4 +119,51 @@ class FirebaseUserListener{
             }
         }
     }
+    //GET ALL user from firebase
+    func downloadUsersFB(completion: @escaping (_ allUsers: [User]) -> Void){
+        var userList: [User] = []
+        FirebaseReference(.User).limit(to: 800).getDocuments { querySnap, error in
+            
+            //Becasue this is key value pair user so need to transfer it to user object
+            guard let doc = querySnap?.documents else{
+                print("No doc in User")
+                return
+            }
+            
+            //take document and try to creaet a user object from that query doc.
+            let allUsers = doc.compactMap{ (queryDocumentSnapShot) -> User? in
+                //Decode anything in firebase to a User object, and add that to allUser array
+                return try? queryDocumentSnapShot.data(as: User.self)
+                
+            }
+            //All user will contain the current user, and we dont want, so we need to remove it
+            for user in allUsers{
+                if User.currentId != user.id{
+                    userList.append(user)
+                }
+            }
+            completion(allUsers)
+        }
+    }
+    //get only user with specific IDs from Firebase
+    func getUserIDFromFirebase(idList: [String], completion: @escaping (_ userList: [User]) -> Void){
+        var count = 0
+        var allUserList: [User] = []
+        
+        for id in idList{
+            FirebaseReference(.User).document(id).getDocument { querySnap, error in
+                guard let document = querySnap else{
+                    print("User document empty")
+                    return
+                }
+                let user = try? document.data(as: User.self)
+                allUserList.append(user!)
+                
+                count += 1
+                if count == idList.count{
+                    completion(allUserList)
+                }
+            }
+        }
+    }
 }

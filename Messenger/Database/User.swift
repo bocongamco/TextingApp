@@ -56,3 +56,25 @@ func saveUserLocally(_ user: User){
         
     }
 }
+func createUserExample(){
+    let name = ["Cao","Cao1","Cao2","Cao3","Cao4","Cao5","Cao6"]
+    var imageIndex = 1
+    var userIndex = 1
+    for i in 0..<6  {
+        //create unique id
+        let id = UUID().uuidString
+        let fileDirec = "Avatars/" + "_\(id)" + ".jpg"
+        
+        FileStorageFirebase.uploadImage(UIImage(named: "user\(imageIndex)")!, directory: fileDirec) { avatarLink in
+            
+            let user = User(id: id, username: name[i], email: "user\(userIndex)@gmail.com",pushId: "",avatarLink: avatarLink ?? "" ,status: "Test user")
+            userIndex += 1
+            FirebaseUserListener.shared.saveUserToFireStore(user)
+            
+        }
+        imageIndex += 1
+        if imageIndex == 6{
+            imageIndex = 1
+        }
+    }
+}
