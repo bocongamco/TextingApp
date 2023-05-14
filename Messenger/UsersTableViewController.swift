@@ -21,31 +21,26 @@ class UsersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getAllUser()
-
+        
 //        createUserExample()
         
     }
-
+    
     // MARK: - Table view data source
+    
+    
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        
-        //If search is active then number of row will = filteredUser otherwise its allUsers
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
         if searchController.isActive{
             return filteredUsers.count
         }
         else{
             return allUsers.count
         }
-        //return searchController.isActive ? filteredUsers.count : allUsers.count
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
