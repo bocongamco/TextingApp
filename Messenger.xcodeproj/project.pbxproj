@@ -17,6 +17,7 @@
 		D6BA9E542A0F502C004E68A0 /* StatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA9E532A0F502C004E68A0 /* StatusTableViewController.swift */; };
 		D6BA9E592A10E053004E68A0 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA9E582A10E053004E68A0 /* UsersTableViewCell.swift */; };
 		D6BA9E5B2A10E06C004E68A0 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA9E5A2A10E06C004E68A0 /* UsersTableViewController.swift */; };
+		D6BA9E5E2A122A38004E68A0 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA9E5D2A122A38004E68A0 /* ProfileTableViewController.swift */; };
 		D6C550942A07D024001DD07A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C550932A07D024001DD07A /* User.swift */; };
 		D6C550972A07D1E1001DD07A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C550962A07D1E1001DD07A /* Constant.swift */; };
 		D6C550992A08BCC1001DD07A /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C550982A08BCC1001DD07A /* FirebaseCollectionReference.swift */; };
@@ -42,6 +43,7 @@
 		D6BA9E532A0F502C004E68A0 /* StatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewController.swift; sourceTree = "<group>"; };
 		D6BA9E582A10E053004E68A0 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		D6BA9E5A2A10E06C004E68A0 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
+		D6BA9E5D2A122A38004E68A0 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		D6C550932A07D024001DD07A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D6C550962A07D1E1001DD07A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D6C550982A08BCC1001DD07A /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
@@ -107,6 +109,15 @@
 			path = SettingViewController;
 			sourceTree = "<group>";
 		};
+		D6BA9E5C2A1229FF004E68A0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D6BA9E5A2A10E06C004E68A0 /* UsersTableViewController.swift */,
+				D6BA9E5D2A122A38004E68A0 /* ProfileTableViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D6C550952A07D029001DD07A /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,8 +160,8 @@
 			children = (
 				D6E9A8CF2A064D6500A963A7 /* AppDelegate.swift */,
 				D6E9A8D12A064D6500A963A7 /* SceneDelegate.swift */,
+				D6BA9E5C2A1229FF004E68A0 /* Views */,
 				D6BA9E582A10E053004E68A0 /* UsersTableViewCell.swift */,
-				D6BA9E5A2A10E06C004E68A0 /* UsersTableViewController.swift */,
 				D6BA9E572A0F98CA004E68A0 /* SettingViewController */,
 				D6E9A8D32A064D6500A963A7 /* LoginViewController.swift */,
 				D6E9A8D52A064D6500A963A7 /* Main.storyboard */,
@@ -288,6 +299,7 @@
 				D6E9A8D42A064D6500A963A7 /* LoginViewController.swift in Sources */,
 				D6BA9E592A10E053004E68A0 /* UsersTableViewCell.swift in Sources */,
 				D6B5EB732A0AA2AB0049BEFD /* FileStorageFirebase.swift in Sources */,
+				D6BA9E5E2A122A38004E68A0 /* ProfileTableViewController.swift in Sources */,
 				D6C550972A07D1E1001DD07A /* Constant.swift in Sources */,
 				D6C741432A0A6CFB00B1293B /* EditProfileTableViewController.swift in Sources */,
 				D6BA9E502A0B7E0C004E68A0 /* ImgExtensions.swift in Sources */,

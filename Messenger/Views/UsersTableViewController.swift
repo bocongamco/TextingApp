@@ -24,10 +24,14 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar()
-        
         tableView.tableFooterView = UIView()
         getAllUser()
         
+        
+        self.refreshControl = UIRefreshControl()
+        self.tableView.refreshControl = self.refreshControl
+        
+        tableView.tableFooterView = UIView()
 //        createUserExample()
         
     }
@@ -55,7 +59,12 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
     }
 
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let user = searchController.isActive ? filteredUsers[indexPath.row] : allUsers[indexPath.row]
+        
+        
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //Because we using a custom cell, User custome cell
@@ -82,6 +91,17 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
             return user.username.lowercased().contains(searchText.lowercased())
         })
         tableView.reloadData()
+    }
+    
+//    Scroll reload
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if self.refreshControl!.isRefreshing{
+            self.getAllUser()
+            self.refreshControl!.endRefreshing()
+        }
+    }
+    private func showUserProfile(_ user: User){
+        
     }
 
 }
