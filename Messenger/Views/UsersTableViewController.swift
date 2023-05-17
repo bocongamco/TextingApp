@@ -62,7 +62,7 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let user = searchController.isActive ? filteredUsers[indexPath.row] : allUsers[indexPath.row]
-        
+        showUserProfile(user)
         
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,6 +72,8 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
         let user = searchController.isActive ? filteredUsers[indexPath.row] : allUsers[indexPath.row]
         // Configure the cell...
         cell.configure(user: user)
+        //weird
+        //cell.configure(user: user)
         return cell
     }
     private func getAllUser(){
@@ -100,8 +102,12 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
             self.refreshControl!.endRefreshing()
         }
     }
+    
     private func showUserProfile(_ user: User){
-        
+        let profile = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileController") as! ProfileTableViewController
+        profile.user = user
+        //push the view to stack 
+        self.navigationController?.pushViewController(profile, animated: true)
     }
 
 }

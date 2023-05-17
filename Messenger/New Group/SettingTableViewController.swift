@@ -54,6 +54,7 @@ class SettingTableViewController: UITableViewController {
             performSegue(withIdentifier: "toEditProfileSegue", sender: self)
         }
     }
+   
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         // remove section number by set the color to the same with bg color
         let headerView = UIView()

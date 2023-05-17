@@ -18,6 +18,28 @@ class ProfileTableViewController: UITableViewController {
     var user: User?
     
     
+//    Modified the tableview
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        // remove section number by set the color to the same with bg color
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor(named: "tableviewBackGroundColor")
+        return headerView
+    }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 1{
+            print("test section")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +48,21 @@ class ProfileTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        navigationItem.largeTitleDisplayMode = .never
+        tableView.tableFooterView = UIView()
+        showFullDetail()
     }
-
+    private func showFullDetail(){
+        if user != nil{
+            self.title = user?.username
+            usernameOutlet.text = user?.username
+            statusOutlet.text = user?.status
+            if user!.avatarLink != ""{
+                FileStorageFirebase.downloadImage(imageUrl: user!.avatarLink) { image in
+                    self.avatarImgOutlet.image = image?.circleImage
+                }
+            }
+        }
+    }
     
 }
