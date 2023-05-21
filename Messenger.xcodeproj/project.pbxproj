@@ -12,7 +12,7 @@
 		D6B558ED2A07AC410044D9AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6B558EC2A07AC410044D9AA /* GoogleService-Info.plist */; };
 		D6B5EB732A0AA2AB0049BEFD /* FileStorageFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B5EB722A0AA2AB0049BEFD /* FileStorageFirebase.swift */; };
 		D6B5EB752A0AAF280049BEFD /* FileStorageHelp .swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B5EB742A0AAF280049BEFD /* FileStorageHelp .swift */; };
-		D6BA9E502A0B7E0C004E68A0 /* ImgExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA9E4F2A0B7E0C004E68A0 /* ImgExtensions.swift */; };
+		D6BA9E502A0B7E0C004E68A0 /* AllExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA9E4F2A0B7E0C004E68A0 /* AllExtensions.swift */; };
 		D6BA9E522A0F4575004E68A0 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA9E512A0F4575004E68A0 /* Status.swift */; };
 		D6BA9E542A0F502C004E68A0 /* StatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA9E532A0F502C004E68A0 /* StatusTableViewController.swift */; };
 		D6BA9E592A10E053004E68A0 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA9E582A10E053004E68A0 /* UsersTableViewCell.swift */; };
@@ -31,6 +31,8 @@
 		D6E9A8DC2A064D6700A963A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E9A8DA2A064D6700A963A7 /* LaunchScreen.storyboard */; };
 		D6F8FB7B2A19F268005B892B /* RecentConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8FB7A2A19F267005B892B /* RecentConversation.swift */; };
 		D6F8FB7E2A1A070B005B892B /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8FB7D2A1A070B005B892B /* ConversationTableViewCell.swift */; };
+		D6F8FB802A1A11E2005B892B /* startConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8FB7F2A1A11E2005B892B /* startConversation.swift */; };
+		D6F8FB822A1A1676005B892B /* RecentListenerFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8FB812A1A1676005B892B /* RecentListenerFirebase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +42,7 @@
 		D6B558EC2A07AC410044D9AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D6B5EB722A0AA2AB0049BEFD /* FileStorageFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorageFirebase.swift; sourceTree = "<group>"; };
 		D6B5EB742A0AAF280049BEFD /* FileStorageHelp .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileStorageHelp .swift"; sourceTree = "<group>"; };
-		D6BA9E4F2A0B7E0C004E68A0 /* ImgExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgExtensions.swift; sourceTree = "<group>"; };
+		D6BA9E4F2A0B7E0C004E68A0 /* AllExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllExtensions.swift; sourceTree = "<group>"; };
 		D6BA9E512A0F4575004E68A0 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		D6BA9E532A0F502C004E68A0 /* StatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewController.swift; sourceTree = "<group>"; };
 		D6BA9E582A10E053004E68A0 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
@@ -61,6 +63,8 @@
 		D6E9A8DD2A064D6700A963A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6F8FB7A2A19F267005B892B /* RecentConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentConversation.swift; sourceTree = "<group>"; };
 		D6F8FB7D2A1A070B005B892B /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
+		D6F8FB7F2A1A11E2005B892B /* startConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startConversation.swift; sourceTree = "<group>"; };
+		D6F8FB812A1A1676005B892B /* RecentListenerFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentListenerFirebase.swift; sourceTree = "<group>"; };
 		DC7E69FCC654D404C4483B86 /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,7 +102,8 @@
 			children = (
 				D6C550962A07D1E1001DD07A /* Constant.swift */,
 				D6B5EB742A0AAF280049BEFD /* FileStorageHelp .swift */,
-				D6BA9E4F2A0B7E0C004E68A0 /* ImgExtensions.swift */,
+				D6BA9E4F2A0B7E0C004E68A0 /* AllExtensions.swift */,
+				D6F8FB7F2A1A11E2005B892B /* startConversation.swift */,
 			);
 			path = Help;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 				D6C550982A08BCC1001DD07A /* FirebaseCollectionReference.swift */,
 				D62262C52A08BE8B003670A9 /* FirebaseUserListener.swift */,
 				D6B5EB722A0AA2AB0049BEFD /* FileStorageFirebase.swift */,
+				D6F8FB812A1A1676005B892B /* RecentListenerFirebase.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -309,14 +315,16 @@
 				D6E235132A0A40F2002EB4F1 /* SettingTableViewController.swift in Sources */,
 				D6C550992A08BCC1001DD07A /* FirebaseCollectionReference.swift in Sources */,
 				D6BA9E5B2A10E06C004E68A0 /* UsersTableViewController.swift in Sources */,
+				D6F8FB802A1A11E2005B892B /* startConversation.swift in Sources */,
 				D6C550942A07D024001DD07A /* User.swift in Sources */,
 				D6E9A8D42A064D6500A963A7 /* LoginViewController.swift in Sources */,
 				D6BA9E592A10E053004E68A0 /* UsersTableViewCell.swift in Sources */,
 				D6B5EB732A0AA2AB0049BEFD /* FileStorageFirebase.swift in Sources */,
 				D6BA9E5E2A122A38004E68A0 /* ProfileTableViewController.swift in Sources */,
+				D6F8FB822A1A1676005B892B /* RecentListenerFirebase.swift in Sources */,
 				D6C550972A07D1E1001DD07A /* Constant.swift in Sources */,
 				D6C741432A0A6CFB00B1293B /* EditProfileTableViewController.swift in Sources */,
-				D6BA9E502A0B7E0C004E68A0 /* ImgExtensions.swift in Sources */,
+				D6BA9E502A0B7E0C004E68A0 /* AllExtensions.swift in Sources */,
 				D6E9A8D02A064D6500A963A7 /* AppDelegate.swift in Sources */,
 				D6BA9E542A0F502C004E68A0 /* StatusTableViewController.swift in Sources */,
 				D6BA9E522A0F4575004E68A0 /* Status.swift in Sources */,

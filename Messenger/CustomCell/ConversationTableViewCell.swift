@@ -53,6 +53,8 @@ class ConversationTableViewCell: UITableViewCell {
             self.unreadBgOutlet.isHidden = true
         }
         setAva(avaLink: recent.avatarLink)
+        dateOutlet.text = datentime(recent.date ?? Date())
+        dateOutlet.adjustsFontSizeToFitWidth = true  
     }
     private func setAva(avaLink: String){
         if avaLink != ""{

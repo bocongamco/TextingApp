@@ -36,7 +36,9 @@ class ProfileTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 1{
-            print("test section")
+            
+            let chatId = StartConversation(user1: User.currentUser!, user2: user!)
+            print("test section id",chatId)
         }
     }
     
