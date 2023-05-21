@@ -31,7 +31,7 @@
 		D6E9A8DC2A064D6700A963A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E9A8DA2A064D6700A963A7 /* LaunchScreen.storyboard */; };
 		D6F8FB7B2A19F268005B892B /* RecentConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8FB7A2A19F267005B892B /* RecentConversation.swift */; };
 		D6F8FB7E2A1A070B005B892B /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8FB7D2A1A070B005B892B /* ConversationTableViewCell.swift */; };
-		D6F8FB802A1A11E2005B892B /* startConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8FB7F2A1A11E2005B892B /* startConversation.swift */; };
+		D6F8FB802A1A11E2005B892B /* StartConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8FB7F2A1A11E2005B892B /* StartConversation.swift */; };
 		D6F8FB822A1A1676005B892B /* RecentListenerFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8FB812A1A1676005B892B /* RecentListenerFirebase.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +63,7 @@
 		D6E9A8DD2A064D6700A963A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6F8FB7A2A19F267005B892B /* RecentConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentConversation.swift; sourceTree = "<group>"; };
 		D6F8FB7D2A1A070B005B892B /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
-		D6F8FB7F2A1A11E2005B892B /* startConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startConversation.swift; sourceTree = "<group>"; };
+		D6F8FB7F2A1A11E2005B892B /* StartConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartConversation.swift; sourceTree = "<group>"; };
 		D6F8FB812A1A1676005B892B /* RecentListenerFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentListenerFirebase.swift; sourceTree = "<group>"; };
 		DC7E69FCC654D404C4483B86 /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -103,7 +103,7 @@
 				D6C550962A07D1E1001DD07A /* Constant.swift */,
 				D6B5EB742A0AAF280049BEFD /* FileStorageHelp .swift */,
 				D6BA9E4F2A0B7E0C004E68A0 /* AllExtensions.swift */,
-				D6F8FB7F2A1A11E2005B892B /* startConversation.swift */,
+				D6F8FB7F2A1A11E2005B892B /* StartConversation.swift */,
 			);
 			path = Help;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 				D6E235132A0A40F2002EB4F1 /* SettingTableViewController.swift in Sources */,
 				D6C550992A08BCC1001DD07A /* FirebaseCollectionReference.swift in Sources */,
 				D6BA9E5B2A10E06C004E68A0 /* UsersTableViewController.swift in Sources */,
-				D6F8FB802A1A11E2005B892B /* startConversation.swift in Sources */,
+				D6F8FB802A1A11E2005B892B /* StartConversation.swift in Sources */,
 				D6C550942A07D024001DD07A /* User.swift in Sources */,
 				D6E9A8D42A064D6500A963A7 /* LoginViewController.swift in Sources */,
 				D6BA9E592A10E053004E68A0 /* UsersTableViewCell.swift in Sources */,
