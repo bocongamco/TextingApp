@@ -16,3 +16,26 @@ func getFileName(fileurl: String) -> String{
     name = name?.components(separatedBy: ".").first
     return name!
 }
+func datentime(_ date: Date) -> String{
+    //Get the time
+    let second = Date().timeIntervalSince(date)
+    var messageStatus = ""
+    if second < 60{
+        messageStatus = "Just now"
+    }
+    else if second < 3600{
+        let minutes = Int(second/60)
+        let text = minutes > 1 ? "mins" : "min"
+        messageStatus = "\(minutes) " + text
+    }
+    // a day
+    else if second < 86400{
+        let hours = Int(second/3600)
+        let hrsText = hours > 1 ? "hours" : "hour"
+        messageStatus = "\(hours)" + hrsText
+    }
+    else{
+        messageStatus  = date.longDate()
+    }
+    return messageStatus
+}

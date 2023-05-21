@@ -30,6 +30,7 @@
 		D6E9A8D92A064D6700A963A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6E9A8D82A064D6700A963A7 /* Assets.xcassets */; };
 		D6E9A8DC2A064D6700A963A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E9A8DA2A064D6700A963A7 /* LaunchScreen.storyboard */; };
 		D6F8FB7B2A19F268005B892B /* RecentConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8FB7A2A19F267005B892B /* RecentConversation.swift */; };
+		D6F8FB7E2A1A070B005B892B /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8FB7D2A1A070B005B892B /* ConversationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		D6E9A8DB2A064D6700A963A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6E9A8DD2A064D6700A963A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6F8FB7A2A19F267005B892B /* RecentConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentConversation.swift; sourceTree = "<group>"; };
+		D6F8FB7D2A1A070B005B892B /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		DC7E69FCC654D404C4483B86 /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				D6BA9E582A10E053004E68A0 /* UsersTableViewCell.swift */,
+				D6F8FB7D2A1A070B005B892B /* ConversationTableViewCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				D6E9A8D02A064D6500A963A7 /* AppDelegate.swift in Sources */,
 				D6BA9E542A0F502C004E68A0 /* StatusTableViewController.swift in Sources */,
 				D6BA9E522A0F4575004E68A0 /* Status.swift in Sources */,
+				D6F8FB7E2A1A070B005B892B /* ConversationTableViewCell.swift in Sources */,
 				D62262C62A08BE8B003670A9 /* FirebaseUserListener.swift in Sources */,
 				D6E9A8D22A064D6500A963A7 /* SceneDelegate.swift in Sources */,
 				D6B5EB752A0AAF280049BEFD /* FileStorageHelp .swift in Sources */,

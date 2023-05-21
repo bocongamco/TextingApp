@@ -754,7 +754,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" name="tableviewBackGroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="85" id="bmg-v3-qQg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="85" id="bmg-v3-qQg" customClass="ConversationTableViewCell" customModule="Messenger" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="414" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bmg-v3-qQg" id="dMA-FH-rWO">
@@ -811,6 +811,7 @@
                                                 <constraint firstAttribute="width" constant="20" id="izj-cD-lgb"/>
                                                 <constraint firstAttribute="trailing" secondItem="O8t-ad-Iw4" secondAttribute="trailing" id="n57-H5-OXa"/>
                                                 <constraint firstAttribute="height" constant="20" id="txq-7A-WjX"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="vcj-q6-m50"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -829,6 +830,14 @@
                                         <constraint firstItem="sU9-mm-fb5" firstAttribute="trailing" secondItem="dMA-FH-rWO" secondAttribute="trailingMargin" id="xq5-NX-SJj"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avatarOutlet" destination="3iL-HR-2Iq" id="GFp-o8-kQD"/>
+                                    <outlet property="dateOutlet" destination="tk7-1W-uWu" id="zno-vA-9SO"/>
+                                    <outlet property="previousMessageOutlet" destination="d2u-lb-sPi" id="ab0-x1-pnk"/>
+                                    <outlet property="unreadBgOutlet" destination="sU9-mm-fb5" id="9NP-K3-3dR"/>
+                                    <outlet property="unreadMessage" destination="O8t-ad-Iw4" id="v84-ws-eR6"/>
+                                    <outlet property="usernameOutlet" destination="Ic2-zR-CFO" id="GFV-Co-Gs6"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
