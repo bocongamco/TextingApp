@@ -34,6 +34,7 @@
 		D6F8FB802A1A11E2005B892B /* StartConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8FB7F2A1A11E2005B892B /* StartConversation.swift */; };
 		D6F8FB822A1A1676005B892B /* RecentListenerFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8FB812A1A1676005B892B /* RecentListenerFirebase.swift */; };
 		D6F8FB842A1AF4A7005B892B /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8FB832A1AF4A7005B892B /* ChatsTableViewController.swift */; };
+		D6F8FB862A1BEC0F005B892B /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8FB852A1BEC0F005B892B /* ConversationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		D6F8FB7F2A1A11E2005B892B /* StartConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartConversation.swift; sourceTree = "<group>"; };
 		D6F8FB812A1A1676005B892B /* RecentListenerFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentListenerFirebase.swift; sourceTree = "<group>"; };
 		D6F8FB832A1AF4A7005B892B /* ChatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
+		D6F8FB852A1BEC0F005B892B /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		DC7E69FCC654D404C4483B86 /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 				D6BA9E5A2A10E06C004E68A0 /* UsersTableViewController.swift */,
 				D6BA9E5D2A122A38004E68A0 /* ProfileTableViewController.swift */,
 				D6F8FB832A1AF4A7005B892B /* ChatsTableViewController.swift */,
+				D6F8FB852A1BEC0F005B892B /* ConversationViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				D6E9A8D22A064D6500A963A7 /* SceneDelegate.swift in Sources */,
 				D6B5EB752A0AAF280049BEFD /* FileStorageHelp .swift in Sources */,
 				D6F8FB7B2A19F268005B892B /* RecentConversation.swift in Sources */,
+				D6F8FB862A1BEC0F005B892B /* ConversationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

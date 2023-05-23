@@ -39,6 +39,9 @@ class ProfileTableViewController: UITableViewController {
             
             let chatId = StartConversation(user1: User.currentUser!, user2: user!)
             print("test section id",chatId)
+            let privateConvo = ConversationViewController(chatId: chatId, receiverId: user!.id, receiverName: user!.username)
+            navigationController?.pushViewController(privateConvo, animated: true)
+            
         }
     }
     

@@ -15,7 +15,31 @@ class FirebaseRecentListener{
     private init(){
         
     }
-    func addRecent(_ recent: RecentConversation){
+    func clearCounter(recent: RecentConversation){
+        var nrecent = recent
+        nrecent.unreadCounter = 0
+        self.saveAllRecent(nrecent)
+    }
+    
+    func resetCounter(roomId: String){
+        //Find all recent conversation in database for that chat room id,
+        //Only for current user,
+        //Bc when we leave the chat, we need to reset the counter.
+        //Here we get all recent for the specific roomid with specific sender id 
+        FirebaseReference(.Recent).whereField(KEYCHATROOMID, isEqualTo: roomId).whereField(KEYSENDERID, isEqualTo: User.currentId).getDocuments { querySnap, error in
+            guard let document = querySnap?.documents else{
+                print("No convo document")
+                return
+            }
+            let allConvo = document.compactMap{queryDocumentSnap ->RecentConversation? in
+                return try? queryDocumentSnap.data(as: RecentConversation.self)
+            }
+            if allConvo.count > 0 {
+                self.clearCounter(recent: allConvo.first!)
+            }
+        }
+    }
+    func saveAllRecent(_ recent: RecentConversation){
         do{
            try FirebaseReference(.Recent).document(recent.id).setData(from: recent)
         }
@@ -45,5 +69,8 @@ class FirebaseRecentListener{
             recentCons.sort(by: {$0.date! > $1.date!})
             completion(recentCons)
         }
+    }
+    func deleteRecent(_ recent: RecentConversation){
+        FirebaseReference(.Recent).document(recent.id).delete()
     }
 }

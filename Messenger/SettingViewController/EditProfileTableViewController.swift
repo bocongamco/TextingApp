@@ -62,6 +62,7 @@ class EditProfileTableViewController: UITableViewController {
             
             print("show Stauts")
             performSegue(withIdentifier: "toStatusView", sender: self)
+            
         }
         //Show satus
     }
